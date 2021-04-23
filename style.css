@@ -1,0 +1,123 @@
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("https://winolla.com/iw/img/def_bg.jpg");
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2,4rem);
+    grid-template-rows: 7rem 4rem 7rem;
+    grid-gap: 4rem;
+    justify-content: center;
+    padding-top: 3rem;
+
+}
+.btn{
+    color: rgb(247, 240, 240);
+    background-color: rgb(10, 10, 10);
+    font-size: 20px;
+    box-shadow: 10px 10px 5px 0px rgb(15, 15, 15);
+    width: 100px;
+    cursor: pointer;
+    
+     
+}
+
+.deck{
+
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(238, 229, 229);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-radius: .5rem;
+    color: rgb(5, 5, 5);
+    user-select: none;
+    
+
+}
+
+.computer-deck{
+    background-color: rgb(22, 138, 216);
+    -webkit-box-shadow: 10px 10px 5px 0px rgb(5, 5, 5);
+   -moz-box-shadow: 10px 10px 5px 0px rgb(24, 23, 20);
+   box-shadow: 10px 10px 5px 0px rgb(13, 13, 14);
+}
+
+.player-deck{
+  background-color: rgb(207, 8, 8);
+ -webkit-box-shadow: 10px 10px 5px 0px rgba(16,18,9,1);
+ -moz-box-shadow: 10px 10px 5px 0px rgba(16,18,9,1);
+  box-shadow: 10px 10px 5px 0px rgba(16,18,9,1);
+
+}
+
+.text{
+    
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 30px;
+}
+
+
+/*Cartas do Jogador*/
+.card{
+    background: rgb(69,13,16);
+    background: linear-gradient(90deg, rgb(184, 123, 126) 0%, rgb(194, 172, 172) 50%, rgba(182, 113, 123, 0.782) 100%);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(231, 212, 212);
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+
+
+}
+
+/*Mudando a cor dos naipes*/
+
+.card.red{
+    color: red;
+}
+
+.card.black{
+    color: black;
+}
+
+
+
+/*Permitir acesso ao atributo data-value*/
+.card::before, .card::after{
+    position: absolute;
+    content: attr(data-value);
+    font-size: 1rem;
+
+
+
+}
+
+/*Simbolo do naipe do canto superior esquerdo*/
+.card::before{
+    top: .5rem;
+    left:.5rem ;
+
+}
+
+/*Simbolo do naipe do canto inferior direito*/
+.card::after{
+  bottom: .5rem;
+  right: .5rem;  
+  transform: rotate(180deg);
+
+
+}
